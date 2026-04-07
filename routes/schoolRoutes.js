@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../db");
 
-// 📌 Helper function: Distance (Haversine)
+// Helper function: Distance (Haversine)
 function getDistance(lat1, lon1, lat2, lon2) {
   const R = 6371;
 
@@ -20,9 +20,7 @@ function getDistance(lat1, lon1, lat2, lon2) {
   return R * c;
 }
 
-//
-// ➕ Add School
-//
+// Add School
 router.post("/addSchool", async (req, res) => {
   try {
     const { name, address, latitude, longitude } = req.body;
@@ -57,9 +55,7 @@ router.post("/addSchool", async (req, res) => {
   }
 });
 
-//
-// 📍 List Schools
-//
+// List Schools
 router.get("/listSchools", async (req, res) => {
   try {
     const userLat = parseFloat(req.query.latitude);
